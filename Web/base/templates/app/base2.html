@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'app/CSS/Menu.css' %}">
+</head>
+<body>
+<header class="header">
+    <div class="Logo">
+        <img src="{% static 'app/Img/Logo_Inicial.png' %}" alt="Logo_Inicial">
+    </div>
+    <nav>
+        <ul class="nav-opc">
+            <li><a href="{% url 'Usuario' %}">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Precios</a></li>
+            <li><a href="{% url 'Contacto' %}">Contacto</a></li>
+        </ul>
+    </nav>
+    <a href="" class="btn"><button>Perfil</button></a>
+</header>
+<div id="Menu" class="Menu">
+    <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
+    <ul class="menu">
+        <li><a href="#">Resumen</a></li>
+        <li><a href="#">Estadisticas</a></li>
+        <li><a href="#">Acciones</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Crear documentos</a>
+            <ul class="submenu">
+            <li><a href="#">Cotización</a></li>
+            <li><a href="#">Orden de compra</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Agenda</a></li>
+        <li><a href="#">Ayuda</a></li>
+    </ul>
+</div>
+
+<div class="contenido" id="contenido">
+    <a id="abrir" class="abrir-cerrar" onclick="mostrar()"><button>Abrir menu</button></a>
+    <a id="cerrar" class="abrir-cerrar" onclick="ocultar()"><button>Cerrar menu</button></a>
+
+    
+    {% block contenido %}  
+    {% endblock  %}
+</div>
+
+<script src="{% static 'app/JS/Menu.js' %}" href="JS/Menu.js"></script>
+
+<footer style ="width: 100%; height: 150px; background-color: rgb(83, 97, 97); color: white; margin-top: 30px;">
+    <p style="text-align: center; padding: 50px;"> Sistema de Contabilidad y Administracion </p>
+</footer>
+
+</body>
+</html>

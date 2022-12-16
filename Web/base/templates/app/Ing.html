@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="las">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio y registro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/CSS/Ing.css' %}">
+</head>
+<body>
+
+<a href="{% url 'Usuario' %}"><button>Entrar</button></a>
+<main>
+    <div class="contenedor__todo">
+        <div class="caja__trasera">
+            <div class="caja__trasera-login">
+                <h3>¿Ya tienes una cuenta?</h3>
+                <p>inicia sesión para entrar en la página</p>
+                <button id="btn__iniciar-sesion">Iniciar sesión</button>
+            </div>
+            <div class="caja__trasera-register">
+                <h3>¿Aún no tienes una cuenta?</h3>
+                <p>Registrate para que puedas entrar en la página</p>
+                <button id="btn__iniciar-registrarse">Registrarse</button>
+            </div>
+        </div>
+            
+            <!--formulario de inicio-->
+        <div class="contenedor__login-register">
+            <form action="" class="formulario__login">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" class="form-control" placeholder="Correo Electronico" name="username">
+                <input type="password" class="form-control" placeholder="Contraseña" name="password">
+                <button href="{% url 'Usuario' %}">Entrar</button>
+            </form>
+
+            <!--formulario de registro-->
+            <form action="" class="formulario__register">
+                <h2>Registrarse</h2>
+
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Correo Electronico">
+                <input type="password" placeholder="Contraseña">
+                <input type="password" placeholder="Confirmar Contraseña">
+
+                <button href="{% url 'Usuario' %}">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</main>
+<script src="{% static 'app/JS/Ing.js' %}"></script>
+</body>
+</html>

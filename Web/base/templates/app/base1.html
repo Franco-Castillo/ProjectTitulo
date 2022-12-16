@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="las">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contabilidad</title>
+    {% load static %}
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'app/CSS/style.css' %}">
+</head>
+<body>
+<header class="header">
+    <div class="Logo">
+        <img src="{% static 'app/Img/Logo_Inicial.png' %}" alt="Logo_Inicial">
+    </div>
+    <nav>
+        <ul class="nav-opc">
+            <li><a href="{% url 'Invitado' %}">Inicio</a></li>
+            <li><a href="{% url 'Nosotros' %}">Nosotros</a></li>
+            <li><a href="{% url 'Precio' %}">Precios</a></li>
+            <li><a href="{% url 'Contacto' %}">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <a href="{% url 'Ingreso' %}" class="btn"><button>Ingresar</button></a>
+</header>
+
+{% block contenido %}
+{% endblock %}
+<footer style ="width: 100%; height: 150px; background-color: rgb(83, 97, 97); color: white; margin-top: 30px;">
+    <p style="text-align: center; padding: 50px;"> Sistema de Contabilidad y Administracion </p>
+</footer>
+</body>
+</html>

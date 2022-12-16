@@ -1,0 +1,173 @@
+*{
+    font-family: "Bahnschrift", Times, serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+.header{
+    background-color: #00c25b;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 50px 10%;
+}
+.header .Logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+.header .Logo img{
+    height: 80px;
+    width: 150px;
+    transition: all 0.3s;
+}
+.header .Logo img:hover{
+    transform: scale(1.2);
+}
+.header .nav-opc{
+    list-style: none;
+}
+.header .nav-opc li{
+    display: inline-block;
+    padding: 0 20px;
+}
+.header .nav-opc a{
+    font-size: 700;
+    color: white;
+    text-decoration: none;
+}
+.header .nav-opc li:hover{
+    transform: scale(1.1);
+}
+.header .nav-opc li a:hover{
+    color: black;
+}
+.header .btn button{
+    margin-left: 20px;
+    font-weight: 700;
+    color: gray;
+    padding: 9px 25px;
+    background: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.header .btn button:hover{
+    background-color: white;
+    color: gray;
+    transform: scale(1.1);
+}
+
+/*Parte Menu Lateral*/
+
+body{
+    font-family: "Bahnschrift", Times, serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    background-color: white;
+}
+.Menu{
+    position: fixed;
+    height: 100%;
+    width: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #191d1f;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding: 1rem 0;
+    box-sizing:border-box;
+}
+.Menu .boton-cerrar{
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    display: block;
+    padding: 0;
+    line-height: 1.5rem;
+    margin: 0;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+.Menu ul, .sidebar li{
+    margin:0;
+    padding:0;
+    list-style:none inside;
+}
+.Menu ul{
+    margin: 4rem auto;
+    display: block;
+    width: 80%;
+    min-width:200px;
+}
+.Menu a{
+    margin-top: 5px;
+    display: block;
+    font-size: 120%;
+    color: #eee;
+    text-decoration: none;
+}
+.Menu a:hover{
+    color:#fff;
+    background-color: #00c25b;
+}
+.submenu{
+    position: absolute;
+    background: #33333333;
+    width: 120%;
+    display: none;
+}
+#contenido{
+    transition: margin-left .4s;
+    padding: 1rem;
+}
+.abrir-cerrar {
+    color: #09d16d;
+    font-size:1rem;   
+}
+#cerrar {
+    display:none;
+}
+.contenido .abrir-cerrar button,
+.control .btn button{
+    margin-left: 50px;
+    font-weight: 500;
+    color: rgb(248, 248, 248);
+    padding: 10px 20px;
+    background: #00c25b;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.T1{
+    display: flex;
+    justify-content: center;    
+}
+.T1,
+#contenido h2{
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-block-end: 10px;
+}
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(83, 97, 97);
+    color: white;
+    margin-top: 40px;
+}
+footer p{
+    text-align: center;
+    padding: 50px;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+  }
