@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+
+{% block titulo %} Registro de Gastos {% endblock %}
+
+{% block contenido %}
+Listar Gastos
+
+<table border="1px" border-collapse= collapse width=80%>
+    <thead>
+        <tr text-align= center>
+            <td text-align= center>Fecha</td>
+            <td>Detalle</td>
+            <td>Precio</td>
+            <td>Cantidad</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for per in gastos %}
+        <tr>
+            <td>{{per.fecha}}</td>
+            <td>{{per.detalle}}</td>
+            <td>{{per.precio}}</td>
+            <td>{{per.cantidad}}</td>
+            <td>
+                <a href="{% url 'eliminar'  per.fecha %}">Eliminar</a>
+                <a href="{% url 'editar'  per.fecha %}">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+
+{% endblock %}

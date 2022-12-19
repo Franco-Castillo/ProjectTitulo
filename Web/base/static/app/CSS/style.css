@@ -67,3 +67,26 @@ body{
     color: gray;
     transform: scale(1.1);
 }
+.contenido{
+    display: flex;
+    margin: 60px;
+}
+.info1{
+    width: 70%;
+    border-right: 3px solid black;
+}
+.op1{
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+.info2{
+    width: 20%;
+    margin-top: 20px;
+}
+.info2 a {
+    display: block;
+    text-align: center;
+    color:gray;
+    margin-bottom: 20px;
+}

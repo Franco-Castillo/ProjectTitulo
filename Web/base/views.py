@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
-from .models import Venta
-from .forms import VentasForm, RegistroUsuario
+from .models import Venta, Gasto
+from .forms import VentasForm, RegistroUsuario , GastosForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 
@@ -30,6 +30,29 @@ def editar(request, id):
     return render(request, 'app/Ventas/editar.html', {'formulario':formulario})
 
 # Crud2.
+def gastos(request):
+    gastos = Gasto.objects.all()
+    return render(request, 'app/Gastos/index1.html', {'gastos': gastos })
+
+def crear1(request):
+    formulario= GastosForm(request.POST or None)
+    if(formulario.is_valid()):
+        formulario.save()
+        return redirect('gastos')
+    return render(request, 'app/Gastos/crear1.html', {'formulario': formulario})    
+
+def eliminar1(request, id):
+    gastos = Gasto.objects.get(nombre=id)
+    gastos.delete()
+    return redirect('gastos')
+
+def editar1(request, id):
+    gastos = Gasto.objects.get(nombre=id)
+    formulario= GastosForm(request.POST or None, instance=gastos )
+    if formulario.is_valid and request.POST:
+        formulario.save()
+        return redirect('gastos')
+    return render(request, 'app/Gastos/editar1.html', {'formulario':formulario})
 
 
 # registro de Usuarios
@@ -69,3 +92,6 @@ def precio(request):
 
 def contacto(request):
     return render(request,'app/Inv/Contacto.html')
+
+def ayuda(request):
+    return render(request,'app/Usu/Ayuda.html')
