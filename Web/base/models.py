@@ -1,5 +1,8 @@
 from django.db import models
 
+class TotalVenta(models.Model):
+    pass
+
 class Venta(models.Model):
     nombre= models.CharField(primary_key=True,max_length=63, verbose_name='Nombre')
     fecha = models.IntegerField(verbose_name='Fecha')

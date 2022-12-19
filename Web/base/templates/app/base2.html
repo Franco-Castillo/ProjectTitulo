@@ -18,12 +18,12 @@
     <nav>
         <ul class="nav-opc">
             <li><a href="{% url 'Usuario' %}">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Precios</a></li>
-            <li><a href="{% url 'Contacto' %}">Contacto</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+            <li><a href="#" class="btn"><button>@{{ user.username }}</button></a></li>
+            {% endif %}
         </ul>
     </nav>
-    <a href="" class="btn"><button>Perfil</button></a>
 </header>
 <div id="Menu" class="Menu">
     <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>

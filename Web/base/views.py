@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from .models import Venta
-from .forms import VentasForm
+from .forms import VentasForm, RegistroUsuario
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 
 # Crud1.
 def ventas(request):
@@ -29,6 +31,24 @@ def editar(request, id):
 
 # Crud2.
 
+
+# registro de Usuarios
+def registro(request):
+    data = {
+        'form':RegistroUsuario()
+    }
+
+    if request.method == 'POST':
+        formulario = RegistroUsuario(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+            messages.success(request, "Te has registrado")
+            return redirect(to="Usuario")
+        data['form'] = formulario
+
+    return render(request, 'registration/registro.html', data)
 
 # vista.
 
