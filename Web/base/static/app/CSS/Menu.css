@@ -24,6 +24,7 @@
 }
 .header .Logo img:hover{
     transform: scale(1.2);
+    padding: 30px;
 }
 .header .nav-opc{
     list-style: none;
