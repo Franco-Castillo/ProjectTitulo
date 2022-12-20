@@ -103,7 +103,10 @@ def usuario(request):
     for gasto in gastos: 
         suma1 += gasto.precio
         pass
-    return render(request,'app/Usuario.html',{'ventas': ventas , 'total': suma ,'gastos': gastos , 'total1': suma1})
+    saldo = 0
+    saldo = suma-suma1
+    return render(request,'app/Usuario.html',{'ventas': ventas , 'total': suma ,'gastos': gastos , 'total1': suma1, 'saldo': saldo})
+    
     
 #-------------------------------------------------------
 def ingreso(request):
