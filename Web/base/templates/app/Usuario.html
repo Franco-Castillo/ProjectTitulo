@@ -1,5 +1,7 @@
 {% extends 'app/base2.html' %}
 
+{% block title %}Resumen{% endblock%}
+
 {% load static %}
 
 {% block contenido %}
@@ -14,21 +16,21 @@
             <li style="padding: 5px; margin-left: 60px; border-radius: 10px; background: #ba0000; line-height: 20px; display: inline-block; transform: scale(1.3); color: white;">Total Gastos
                 <h3>${{ total1 }}</h3>
             </li>
-            <li style="padding: 5px; margin-left: 60px; border-radius: 10px; background: #a9a9a9; line-height: 20px; display: inline-block; transform: scale(1.3); color: white;">Total Gastos
+            <li style="padding: 5px; margin-left: 60px; border-radius: 10px; background: #a9a9a9; line-height: 20px; display: inline-block; transform: scale(1.3); color: white;">Saldo total
                 <h3>${{ saldo }}</h3>
             </li>
         </ul>
     </nav>
     <br>
-    <h2 style="text-align: center;">Proxima Actualizaciones</h2>
+    <h2 style="text-align: center;">Próxima Actualizacion</h2>
     <div style="text-align: center;">    
         <img style=" max-width: 60%;" src="{% static 'app/Img/Proxima.jpg' %}">
     </div>
     <h2 style="text-align: center;">Acciones</h2>
     <br>
     <div class="control" style="text-align: center;">
-        <a href="{% url 'ventas' %}"><button type="button" class="btn btn-success">Registrar una venta</button></a>
-        <a href="{% url 'gastos' %}"><button type="button" class="btn btn-danger">Registrar un gasto</button></a>
+        <a href="{% url 'crear' %}"><button type="button" class="btn btn-success">Registrar una venta</button></a>
+        <a href="{% url 'crear1' %}"><button type="button" class="btn btn-danger">Registrar un gasto</button></a>
         <a href=""><button type="button" class="btn btn-primary">Registrar cobros y deudas</button></a>
     </div>
 </div>

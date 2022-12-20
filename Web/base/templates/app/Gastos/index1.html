@@ -1,22 +1,22 @@
 {% extends 'app/base2.html' %}
 
-{% block titulo %} Registro de Gastos {% endblock %}
+{% block title %}Egresos{% endblock %}
 
 {% block contenido %}
 
-<div>Listar Gastos</div>
+<div style="text-align: center;">
+    <h1>Egresos</h1>
+</div>
 <br>
 <br>
-<a href="/Gastos/index1">Inicio</a>
-<a href="/Gastos/crear1">Agregar</a>
-<div style="text-align: center;">Total Precio Gastos</div>
+<div style="text-align: center;">Total Egresos</div>
 <table border="1px" border-collapse= collapse width=90%>
     <thead>
         <tr text-align= center>
-            <td text-align= center>Fecha</td>
-            <td>Detalle</td>
-            <td>Precio</td>
-            <td>Cantidad</td>
+            <td style="font-weight: bold" text-align= center>Fecha</td>
+            <td style="font-weight: bold">Proveedor</td>
+            <td style="font-weight: bold">Precio</td>
+            <td style="font-weight: bold">Detalle</td>
         </tr>
     </thead>
     <tbody>
@@ -27,14 +27,17 @@
             <td>{{per.precio}}</td>
             <td>{{per.cantidad}}</td>
             <td>
-                <a href="{% url 'eliminar1' per.fecha %}">Eliminar</a>
-                <a href="{% url 'editar1' per.fecha %}">Editar</a>
+                <a href="{% url 'editar1' per.fecha %}"><button type="button" class="btn btn-primary">Editar</button></a>
+                <a href="{% url 'eliminar1' per.fecha %}"><button type="button" class="btn btn-danger">Eliminar</button></a>
             </td>
         </tr>
         {% endfor %}
-        <div style="text-align: center;">{{ total1 }}</div>
+        <div style="text-align: center; font-weight: bold;"><h3>${{ total1 }}</h3></div>
+        <br>
     </tbody>
 </table>
 <br>
-
+<div style="text-align: center;">
+    <a href="/Gastos/crear1"><button type="button" class="btn btn-success">Agregar</button></a>
+</div>
 {% endblock %}

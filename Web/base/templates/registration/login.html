@@ -18,7 +18,7 @@
             <div class="col-12 col-md-6 offset-md-3">
                 <div class="card" style="background-color: #8dc73f;">
                     <div class="card-body">
-                        <h2>Ingresa tus Datos Para Ingresar</h2>
+                        <h2>Iniciar Sesión</h2>
                         <br>
                         <form action="" method="post">
 
@@ -26,11 +26,9 @@
                             {{ form }}
                             <br>
                             <br>
-                            <button type="button" class="btn btn-light">
-                            <a style="text-decoration: none; " href="{% url 'Invitado' %}">Ir a Inicio</a>
-                            </button>
-                            <a style="text-decoration: none; color: white;" href="{% url 'registro' %}">Registrarse</a>
-                            <input type="submit" value="ingresar" class="btn btn-success float-end">
+                            <a style="text-decoration: none; " href="{% url 'Invitado' %}"><button type="button" class="btn btn-outline-dark">Volver al inicio</button></a>
+                            <a style="text-decoration: none; color: black;" href="{% url 'registro' %}"><p></p>Registrarse</a>
+                            <input type="submit" value="Ingresar" class="btn btn-success float-end">
                         </form>
                     </div>
                 </div>
