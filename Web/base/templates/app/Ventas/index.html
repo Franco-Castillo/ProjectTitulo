@@ -1,10 +1,15 @@
-{% extends 'app/base.html' %}
+{% extends 'app/base2.html' %}
 
 {% block titulo %} Registro de Ventas {% endblock %}
 
 {% block contenido %}
-Listar ventas
 
+<div>Listar ventas</div>
+<br>
+<br>
+<a href="/Ventas/index">Inicio</a>
+<a href="/Ventas/crear">Agregar</a>
+<div style="text-align: center;">Total Precio Ventas</div>
 <table border="1px" border-collapse= collapse width=80%>
     <thead>
         <tr text-align= center>
@@ -16,17 +21,19 @@ Listar ventas
     </thead>
     <tbody>
         {% for per in ventas %}
-        <tr>
-            <td>{{per.nombre}}</td>
-            <td>{{per.fecha}}</td>
-            <td>{{per.precio}}</td>
-            <td>{{per.descripcion}}</td>
-            <td>
-                <a href="{% url 'eliminar'  per.nombre %}">Eliminar</a>
-                <a href="{% url 'editar'  per.nombre %}">Editar</a>
-            </td>
-        </tr>
+            <tr>
+                <td>{{per.nombre}}</td>
+                <td>{{per.fecha}}</td>
+                <td>{{per.precio}}</td>
+                <td>{{per.descripcion}}</td>
+                <td>
+                    <a href="{% url 'eliminar'  per.nombre %}">Eliminar</a>
+                    <a href="{% url 'editar'  per.nombre %}">Editar</a>
+                </td>
+            </tr>
         {% endfor %}
+        <div style="text-align: center;">{{ total }}</div>
+        <br>
     </tbody>
 </table>
 <br>

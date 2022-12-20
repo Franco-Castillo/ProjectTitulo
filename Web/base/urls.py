@@ -17,9 +17,9 @@ urlpatterns = [
     path('app/Ventas/eliminar/<str:id>', views.eliminar, name="eliminar"),
     #crud2
     path('Gastos/index1', views.gastos, name="gastos"),
-    path('Gastos/crear1', views.crear1, name="crear"),
-    path('app/Gastos/editar/<str:id>', views.editar1, name="editar"),
-    path('app/Gastos/eliminar/<str:id>', views.eliminar1, name="eliminar"),
+    path('Gastos/crear1', views.crear1, name="crear1"),
+    path('app/Gastos/editar1/<str:id>', views.editar1, name="editar1"),
+    path('app/Gastos/eliminar1/<str:id>', views.eliminar1, name="eliminar1"),
     #Usuario
     path('registro/', registro, name="registro"),
     

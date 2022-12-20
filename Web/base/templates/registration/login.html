@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Ingreso al sistema</title>
 </head>
-<body>
+<body style="background-image: url('https://static.vecteezy.com/system/resources/previews/004/708/960/non_2x/abstract-green-background-green-and-white-simple-and-clean-background-vector.jpg'); background-size: 100%; height: auto;">
     <br>
     <br>
     <br>
@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
-                <div class="card">
+                <div class="card" style="background-color: #8dc73f;">
                     <div class="card-body">
                         <h2>Ingresa tus Datos Para Ingresar</h2>
                         <br>
@@ -26,9 +26,10 @@
                             {{ form }}
                             <br>
                             <br>
-                            <a href="{% url 'Invitado' %}">Ir a Inicio</a>
-                            <br>
-                            <a href="{% url 'registro' %}">Registrarse</a>
+                            <button type="button" class="btn btn-light">
+                            <a style="text-decoration: none; " href="{% url 'Invitado' %}">Ir a Inicio</a>
+                            </button>
+                            <a style="text-decoration: none; color: white;" href="{% url 'registro' %}">Registrarse</a>
                             <input type="submit" value="ingresar" class="btn btn-success float-end">
                         </form>
                     </div>

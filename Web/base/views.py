@@ -7,7 +7,11 @@ from django.contrib.auth import authenticate, login
 # Crud1.
 def ventas(request):
     ventas = Venta.objects.all()
-    return render(request, 'app/Ventas/index.html', {'ventas': ventas })
+    suma = 0
+    for venta in ventas: 
+        suma += venta.precio
+
+    return render(request, 'app/Ventas/index.html', {'ventas': ventas , 'total': suma})
 
 def crear(request):
     formulario= VentasForm(request.POST or None)
@@ -29,10 +33,15 @@ def editar(request, id):
         return redirect('ventas')
     return render(request, 'app/Ventas/editar.html', {'formulario':formulario})
 
+#---------------------------------------------------------------------------------
 # Crud2.
+
 def gastos(request):
     gastos = Gasto.objects.all()
-    return render(request, 'app/Gastos/index1.html', {'gastos': gastos })
+    suma1 = 0
+    for gasto in gastos: 
+        suma1 += gasto.precio
+    return render(request, 'app/Gastos/index1.html', {'gastos': gastos , 'total1': suma1})
 
 def crear1(request):
     formulario= GastosForm(request.POST or None)
@@ -42,17 +51,21 @@ def crear1(request):
     return render(request, 'app/Gastos/crear1.html', {'formulario': formulario})    
 
 def eliminar1(request, id):
-    gastos = Gasto.objects.get(nombre=id)
+    gastos = Gasto.objects.get(fecha=id)
     gastos.delete()
     return redirect('gastos')
 
 def editar1(request, id):
-    gastos = Gasto.objects.get(nombre=id)
+    gastos = Gasto.objects.get(fecha=id)
     formulario= GastosForm(request.POST or None, instance=gastos )
     if formulario.is_valid and request.POST:
         formulario.save()
         return redirect('gastos')
     return render(request, 'app/Gastos/editar1.html', {'formulario':formulario})
+
+#---------------------------------------------------------------------------------
+# Crud3.
+
 
 
 # registro de Usuarios
@@ -78,9 +91,21 @@ def registro(request):
 def invitado(request):
     return render(request,'app/Invitado.html')
 
+#------------------------------------------------------
 def usuario(request):
-    return render(request,'app/Usuario.html')
-
+    ventas = Venta.objects.all()
+    suma = 0
+    for venta in ventas: 
+        suma += venta.precio
+        pass
+    gastos = Gasto.objects.all()
+    suma1 = 0
+    for gasto in gastos: 
+        suma1 += gasto.precio
+        pass
+    return render(request,'app/Usuario.html',{'ventas': ventas , 'total': suma ,'gastos': gastos , 'total1': suma1})
+    
+#-------------------------------------------------------
 def ingreso(request):
     return render(request,'app/Ing.html')
 

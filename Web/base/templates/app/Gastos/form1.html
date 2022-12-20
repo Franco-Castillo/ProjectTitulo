@@ -3,7 +3,7 @@
     {% for campo in formulario %}
         <label>{{campo.label}}</label>
         <input type="{{ campo.field.widget.input_type }}"
-        name="{{campo.name}}"
+        name="{{campo.fecha}}"
         id=""
         placeholder="{{ campo.label }}"
         value="{{ campo.value | default:'' }}"
